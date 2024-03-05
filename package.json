@@ -1,0 +1,21 @@
+{
+  "name": "freecaptcha",
+  "version": "1.1.0",
+  "description": "A free captcha add-on for your Javascript project ",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "author": "harshnambiar",
+  "license": "MIT",
+  "keywords": [
+    "captcha"
+  ],
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}
