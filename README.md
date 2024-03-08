@@ -3,7 +3,7 @@ Hey there! We created this free, easy to use Captcha package so you can add addi
 
 # Tutorial  
 1. npm install freecaptcha
-2. have a <canvas> element on your HTML page where your want FreeCaptcha to place the Captcha
+2. have a canvas element on your HTML page where your want FreeCaptcha to place the Captcha
 3. in your index.js, import freecaptcha
 4. call its createCaptcha function which needs the HTMLCanvasElement from Step 2 as its sole argument
 5. var captcha_val = createCaptcha(canvas_el)
