@@ -16,3 +16,6 @@ https://github.com/harshnambiar/freecaptcha_test
 
 The NPM package can be found here:  
 https://www.npmjs.com/package/freecaptcha
+
+# Want to Give Us a Star?  
+Here is the repo: https://github.com/harshnambiar/freecaptcha
