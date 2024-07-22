@@ -44,7 +44,7 @@ function addTextToImage(imagePath: string, text: string, circle_canvas: HTMLCanv
     }
     var rtext1 = rnd.substring(0, 3);
     var rtext2 = rnd.substring(3, 6);
-    var colArr = ["#00FF00","#FFFF00","cyan","aqua","black","#FF1493","#808000","#8B4513","#708090","#40E0D0","#FF00FF"];
+    var colArr = ["#00FF00","#FFFF00","cyan","aqua","black","#FF1493","#808000","#8B4513","#708090","#40E0D0","#FF00FF","#FFC300", "#FF5733", "#DAF7A6 ", "#581845", "#900C3F", "#c281fa", "#12de42", "#97bf0e", "#f78c19"];
     var dcol1 = Math.floor(Math.random() * colArr.length);
     var dcol2 = Math.floor(Math.random() * colArr.length);
     if (order == 0) {
