@@ -47,155 +47,67 @@ function addTextToImage(imagePath: string, text: string, circle_canvas: HTMLCanv
     var colArr = ["#00FF00","#FFFF00","cyan","aqua","black","#FF1493","#808000","#8B4513","#708090","#40E0D0","#FF00FF","#FFC300", "#FF5733", "#DAF7A6 ", "#581845", "#900C3F", "#c281fa", "#12de42", "#97bf0e", "#f78c19"];
     var dcol1 = Math.floor(Math.random() * colArr.length);
     var dcol2 = Math.floor(Math.random() * colArr.length);
-    if (order == 0) {
-        var text1 = text.substring(0, 3);
-        var text2 = text.substring(3, 6);
-        var text3 = text.substring(6, 9);
-        img.onload = function () {
-            context.drawImage(img, 0, 0);
-            context.lineWidth = 1;
-            context.fillStyle = "#FFFFFF";
-            context.font = "25px bold courier";
-            context.fillText(text1, 5, 35);
-            context.fillStyle = "indigo";
-            context.font = "25px bold courier";
-            context.fillText(text2, 70, shift1);
-            context.fillStyle = "#FF0000";
-            context.font = "25px bold courier";
-            context.fillText(text3, 140, shift2);
-            context.fillStyle = colArr[dcol1];
-            context.font = "25px bold courier";
-            context.fillText(rtext1, 10, shift2);
-            context.fillStyle = colArr[dcol2];
-            context.font = "25px bold courier";
-            context.fillText(rtext2, 140, 40);
-        };
-    }
 
-    
-    else if (order == 1) {
-        var text1 = text.substring(0, 3);
-        var text2 = text.substring(3, 6);
-        var text3 = text.substring(6, 9);
-        img.onload = function () {
-            context.drawImage(img, 0, 0);
-            context.lineWidth = 1;
-            context.fillStyle = "#FFFFFF";
-            context.font = "25px bold monospace";
-            context.fillText(text1, 5, 35);
-            context.fillStyle = "#FF0000";
-            context.font = "25px bold monospace";
-            context.fillText(text3, 70, shift1);
-            context.fillStyle = "indigo";
-            context.font = "25px bold monospace";
-            context.fillText(text2, 140, shift2);
-            context.fillStyle = colArr[dcol1];
-            context.font = "25px bold monospace";
-            context.fillText(rtext1, 10, shift2);
-            context.fillStyle = colArr[dcol2];
-            context.font = "25px bold monospace";
-            context.fillText(rtext2, 140, 40);
-        };
+    var text1 = text.substring(0, 3);
+    var text2 = text.substring(3, 6);
+    var text3 = text.substring(6, 9);
+
+    var t = [["",""]];
+    var used = [false, false, false, false, false];
+
+    var k = 0;
+    while (k < 5){
+
+        var rpos = Math.floor(Math.random() * 10);
+        if (((rpos == 0) || (rpos == 9)) && (!used[0])){
+            t.push([text1, "#FFFFFF"]);
+            used[0] = true;
+            k++;
+        }
+        else if (((rpos == 1) || (rpos == 8)) && (!used[1])){
+            t.push([text2, "indigo"]);
+            used[1] = true;
+            k++;
+        }
+        else if (((rpos == 2) || (rpos == 7)) && (!used[2])){
+            t.push([text3, "#FF0000"]);
+            used[2] = true;
+            k++;
+        }
+        else if (((rpos == 3) || (rpos == 6)) && (!used[3])){
+            t.push([rtext1, colArr[dcol1]]);
+            used[3] = true;
+            k++;
+        }
+        else if (((rpos == 4) || (rpos == 5)) && (!used[4])){
+            t.push([rtext2, colArr[dcol2]]);
+            used[4] = true;
+            k++;
+        }
+        else {}
 
     }
-    else if (order == 2) {
-        var text1 = text.substring(0, 3);
-        var text2 = text.substring(3, 6);
-        var text3 = text.substring(6, 9);
-        img.onload = function () {
-            context.drawImage(img, 0, 0);
-            context.lineWidth = 1;
-            context.fillStyle = "#FF0000";
-            context.font = "25px bold monospace";
-            context.fillText(text3, 5, 35);
-            context.fillStyle = "#FFFFFF";
-            context.font = "25px bold monospace";
-            context.fillText(text1, 70, shift1);
-            context.fillStyle = "indigo";
-            context.font = "25px bold monospace";
-            context.fillText(text2, 140, shift2);
-            context.fillStyle = colArr[dcol1];
-            context.font = "25px bold monospace";
-            context.fillText(rtext1, 10, shift2);
-            context.fillStyle = colArr[dcol2];
-            context.font = "25px bold monospace";
-            context.fillText(rtext2, 140, 40);
-        };
 
-    }
-    else if (order == 3) {
-        var text1 = text.substring(0, 3);
-        var text2 = text.substring(3, 6);
-        var text3 = text.substring(6, 9);
-        img.onload = function () {
-            context.drawImage(img, 0, 0);
-            context.lineWidth = 1;
-            context.fillStyle = "indigo";
-            context.font = "25px bold monospace";
-            context.fillText(text2, 5, 35);
-            context.fillStyle = "#FFFFFF";
-            context.font = "25px bold monospace";
-            context.fillText(text1, 70, shift1);
-            context.fillStyle = "#FF0000";
-            context.font = "25px bold monospace";
-            context.fillText(text3, 140, shift2);
-            context.fillStyle = colArr[dcol1];
-            context.font = "25px bold monospace";
-            context.fillText(rtext1, 10, shift2);
-            context.fillStyle = colArr[dcol2];
-            context.font = "25px bold monospace";
-            context.fillText(rtext2, 140, 40);
-        };
 
-    }
-    else if (order == 4) {
-        var text1 = text.substring(0, 3);
-        var text2 = text.substring(3, 6);
-        var text3 = text.substring(6, 9);
-        img.onload = function () {
-            context.drawImage(img, 0, 0);
-            context.lineWidth = 1;
-            context.fillStyle = "indigo";
-            context.font = "25px bold monospace";
-            context.fillText(text2, 5, 35);
-            context.fillStyle = "#FF0000";
-            context.font = "25px bold monospace";
-            context.fillText(text3, 70, shift1);
-            context.fillStyle = "#FFFFFF";
-            context.font = "25px bold monospace";
-            context.fillText(text1, 140, shift2);
-            context.fillStyle = colArr[dcol1];
-            context.font = "25px bold monospace";
-            context.fillText(rtext1, 10, shift2);
-            context.fillStyle = colArr[dcol2];
-            context.font = "25px bold monospace";
-            context.fillText(rtext2, 140, 40);
-        };
+    img.onload = function () {
+        context.drawImage(img, 0, 0);
+        context.lineWidth = 1;
+        context.fillStyle = t[1][1];
+        context.font = "25px bold courier";
+        context.fillText(t[1][0], 5, 35);
+        context.fillStyle = t[2][1];
+        context.font = "25px bold courier";
+        context.fillText(t[2][0], 70, shift1);
+        context.fillStyle = t[3][1];
+        context.font = "25px bold courier";
+        context.fillText(t[3][0], 140, shift2);
+        context.fillStyle = t[4][1];
+        context.font = "25px bold courier";
+        context.fillText(t[4][0], 10, shift2);
+        context.fillStyle = t[5][1];
+        context.font = "25px bold courier";
+        context.fillText(t[5][0], 140, 40);
+    };
 
-    }
-    else {
-        var text1 = text.substring(0, 3);
-        var text2 = text.substring(3, 6);
-        var text3 = text.substring(6, 9);
-        img.onload = function () {
-            context.drawImage(img, 0, 0);
-            context.lineWidth = 1;
-            context.fillStyle = "#FF0000";
-            context.font = "25px bold monospace";
-            context.fillText(text3, 5, 35);
-            context.fillStyle = "indigo";
-            context.font = "25px bold monospace";
-            context.fillText(text2, 70, shift1);
-            context.fillStyle = "#FFFFFF";
-            context.font = "25px bold monospace";
-            context.fillText(text1, 140, shift2);
-            context.fillStyle = colArr[dcol1];
-            context.font = "25px bold monospace";
-            context.fillText(rtext1, 10, shift2);
-            context.fillStyle = colArr[dcol2];
-            context.font = "25px bold monospace";
-            context.fillText(rtext2, 140, 40);
-        };
 
-    }
 }
