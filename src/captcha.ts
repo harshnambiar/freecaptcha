@@ -48,6 +48,16 @@ function addTextToImage(imagePath: string, text: string, circle_canvas: HTMLCanv
     var dcol1 = Math.floor(Math.random() * colArr.length);
     var dcol2 = Math.floor(Math.random() * colArr.length);
 
+    var fonts = ["","","","",""];
+    for (var m = 0;m < 5; m++){
+        if (Math.random() > 0.5){
+            fonts[m] = "25px bold courier";
+        }
+        else {
+            fonts[m] = "25px monospace";
+        }
+    }
+
     var text1 = text.substring(0, 3);
     var text2 = text.substring(3, 6);
     var text3 = text.substring(6, 9);
@@ -93,19 +103,19 @@ function addTextToImage(imagePath: string, text: string, circle_canvas: HTMLCanv
         context.drawImage(img, 0, 0);
         context.lineWidth = 1;
         context.fillStyle = t[1][1];
-        context.font = "25px bold courier";
+        context.font = fonts[0];
         context.fillText(t[1][0], 5, 35);
         context.fillStyle = t[2][1];
-        context.font = "25px bold courier";
+        context.font = fonts[1];
         context.fillText(t[2][0], 70, shift1);
         context.fillStyle = t[3][1];
-        context.font = "25px bold courier";
+        context.font = fonts[2];
         context.fillText(t[3][0], 140, shift2);
         context.fillStyle = t[4][1];
-        context.font = "25px bold courier";
+        context.font = fonts[3];
         context.fillText(t[4][0], 10, shift2);
         context.fillStyle = t[5][1];
-        context.font = "25px bold courier";
+        context.font = fonts[4];
         context.fillText(t[5][0], 140, 40);
     };
 

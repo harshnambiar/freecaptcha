@@ -1,6 +1,6 @@
 {
   "name": "freecaptcha",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "A free captcha add-on for your Javascript project ",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
